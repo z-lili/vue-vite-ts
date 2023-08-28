@@ -24,5 +24,8 @@ import Layout from './layout/Layout.vue'
 </script>
 
 <style lang="scss" scoped>
-
+#app-container {
+  height: 100px;
+  background-color: $test-color;
+}
 </style>
