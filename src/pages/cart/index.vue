@@ -1,13 +1,11 @@
 <template>
   <div>
-    分类
-    <div style="height: 202px;background-color: pink;">
-      dfkdl;f;l
-    </div>
+    购物车
   </div>
 </template>
 
 <script setup lang="ts">
+
 
 </script>
 

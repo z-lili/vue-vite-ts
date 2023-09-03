@@ -5,14 +5,14 @@
       <template #default>
         <Layout>
           <router-view v-slot="{ Component }">
-            <keep-alive>
+            <keep-alive :include="includes">
               <component :is="Component" class="page-view" :key="$route.fullPath" />
             </keep-alive>
           </router-view>
         </Layout>
       </template>
       <template #fallback>
-        <div>loading</div>
+        <div>loading...</div>
       </template>
     </Suspense>
   </div>
@@ -21,11 +21,23 @@
 <script setup lang="ts">
 import Layout from './layout/Layout.vue'
 
+// 设置需要缓存的页面
+const includes = ref([])
+
 </script>
 
 <style lang="scss" scoped>
-#app-container {
-  height: 100px;
-  background-color: $test-color;
+html,
+body,
+body {
+  #app {
+    height: 100vh;
+  }
+  #app-container {
+  height: 100vh;
+  margin: 0 auto;
+  width: p2r(750);
+  background-color: #fff;
+}
 }
 </style>

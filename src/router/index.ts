@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { setTitle } from '@/utils/tool'
 
 const routes = [
   {
@@ -17,11 +18,21 @@ const routes = [
     }
   },
   {
-    path: '/recommend',
-    name: 'recommend',
+    path: '/category',
+    name: 'category',
     component: () => import('../pages/recommend/Index.vue'),
     meta: {
-      title: '推荐',
+      title: '分类',
+      keepAlive: true,
+      keepAliveScrollElm: ['.activepanel']
+    }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('../pages/cart/index.vue'),
+    meta: {
+      title: '购物车',
       keepAlive: true,
       keepAliveScrollElm: ['.activepanel']
     }
@@ -43,7 +54,9 @@ const router = createRouter({
   routes,
 })
 
-
+router.beforeEach((to) => {
+  if (to.meta.title) setTitle(to.meta.title as string)
+})
 
 export default router
 
