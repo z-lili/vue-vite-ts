@@ -12,7 +12,6 @@
 
 <script setup lang="ts">
 // import { Add } from '@nutui/icons-vue'
-
 </script>
 
 <style lang="scss" scoped>

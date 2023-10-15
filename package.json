@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "buildsimba3test": "rimraf ../dist && vite build --mode simba3test",
+    "buildsit": "rimraf ../dist && vite build --mode sit",
+    "build": "rimraf ../dist && vite build --mode release",
     "preview": "vite preview",
-    "ts": "vue-tsc --noEmit"
+    "ts": "vue-tsc --noEmit",
+    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\""
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.1.1",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "prettier": "^3.0.3",
     "sass": "^1.66.1",
     "typescript": "^5.0.2",
     "unplugin-vue-components": "^0.25.2",
