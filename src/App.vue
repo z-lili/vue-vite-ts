@@ -19,11 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import Layout from './layout/Layout.vue'
+import Layout from "./layout/Layout.vue"
 
 // 设置需要缓存的页面
 const includes = ref([])
-
 </script>
 
 <style lang="scss" scoped>
@@ -33,11 +32,12 @@ body {
   #app {
     height: 100vh;
   }
+
   #app-container {
-  height: 100vh;
-  margin: 0 auto;
-  width: p2r(750);
-  background-color: #fff;
-}
+    width: p2r(750);
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+  }
 }
 </style>

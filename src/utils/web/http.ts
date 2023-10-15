@@ -3,7 +3,7 @@ import axios from "axios"
 class Request {
   private instance: any
   private defaultConfig = {
-    baseURL: '/api',
+    baseURL: "/api",
     timeout: 5000,
   }
   private interceptorHook: any
@@ -15,8 +15,14 @@ class Request {
 
   // 通用拦截，在初始化时就进行注册和运行，对基础属性进行处理
   private setupInterceptors() {
-    this.instance.interceptors.request.use(this.interceptorHook?.requestInterceptor, this.interceptorHook?.requestInterceptorCatch)
-    this.instance.interceptors.response.use(this.interceptorHook?.responseInterceptor, this.interceptorHook?.responseInterceptorCatch)
+    this.instance.interceptors.request.use(
+      this.interceptorHook?.requestInterceptor,
+      this.interceptorHook?.requestInterceptorCatch
+    )
+    this.instance.interceptors.response.use(
+      this.interceptorHook?.responseInterceptor,
+      this.interceptorHook?.responseInterceptorCatch
+    )
   }
 
   // 请求
@@ -26,7 +32,7 @@ class Request {
 
   public get(url: string, data: object) {
     return this.instance.get(url, {
-      params: data
+      params: data,
     })
   }
 
@@ -43,4 +49,4 @@ class Request {
   }
 }
 
-export default Request 
+export default Request

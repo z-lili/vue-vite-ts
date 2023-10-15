@@ -10,7 +10,8 @@
     "build": "rimraf ../dist && vite build --mode release",
     "preview": "vite preview",
     "ts": "vue-tsc --noEmit",
-    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\""
+    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint  \"**/*.{css,scss,vue,html}\" --fix"
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.1.1",
@@ -25,8 +26,17 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "postcss": "^8.4.31",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.0.3",
     "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-recommended-scss": "^13.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^34.0.0",
     "typescript": "^5.0.2",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5",
