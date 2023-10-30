@@ -13,7 +13,8 @@
     "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint  \"**/*.{css,scss,vue,html}\" --fix",
     "prepare": "npx husky install",
-    "lint:lint-staged": "lint-staged"
+    "lint:lint-staged": "lint-staged",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@nutui/icons-vue": "^0.1.1",
@@ -30,6 +31,8 @@
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
     "@vitejs/plugin-vue": "^4.2.3",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "postcss": "^8.4.31",
@@ -67,5 +70,10 @@
     "*.md": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
